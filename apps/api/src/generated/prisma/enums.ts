@@ -69,3 +69,57 @@ export const QuotationStatus = {
 } as const
 
 export type QuotationStatus = (typeof QuotationStatus)[keyof typeof QuotationStatus]
+
+
+export const PaymentStatus = {
+  CREATED: 'CREATED',
+  PENDING: 'PENDING',
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+  PARTIALLY_REFUNDED: 'PARTIALLY_REFUNDED'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
+
+
+export const PaymentMethod = {
+  RAZORPAY: 'RAZORPAY',
+  UPI: 'UPI',
+  CARD: 'CARD',
+  NET_BANKING: 'NET_BANKING',
+  CASH: 'CASH',
+  BANK_TRANSFER: 'BANK_TRANSFER'
+} as const
+
+export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
+
+
+export const NotificationType = {
+  BOOKING: 'BOOKING',
+  PAYMENT: 'PAYMENT',
+  QUOTATION: 'QUOTATION',
+  ENQUIRY: 'ENQUIRY',
+  GENERAL: 'GENERAL'
+} as const
+
+export type NotificationType = (typeof NotificationType)[keyof typeof NotificationType]
+
+
+export const NotificationChannel = {
+  IN_APP: 'IN_APP',
+  EMAIL: 'EMAIL',
+  SMS: 'SMS'
+} as const
+
+export type NotificationChannel = (typeof NotificationChannel)[keyof typeof NotificationChannel]
+
+
+export const NotificationStatus = {
+  PENDING: 'PENDING',
+  SENT: 'SENT',
+  FAILED: 'FAILED',
+  READ: 'READ'
+} as const
+
+export type NotificationStatus = (typeof NotificationStatus)[keyof typeof NotificationStatus]

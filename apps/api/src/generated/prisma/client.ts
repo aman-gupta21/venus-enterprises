@@ -106,3 +106,43 @@ export type Quotation = Prisma.QuotationModel
  * 
  */
 export type QuotationItem = Prisma.QuotationItemModel
+/**
+ * Model Payment
+ * 
+ */
+export type Payment = Prisma.PaymentModel
+/**
+ * Model Notification
+ * 
+ */
+export type Notification = Prisma.NotificationModel
+/**
+ * Model Review
+ * 
+ */
+export type Review = Prisma.ReviewModel
+/**
+ * Model Client
+ * 
+ */
+export type Client = Prisma.ClientModel
+/**
+ * Model Project
+ * 
+ */
+export type Project = Prisma.ProjectModel
+/**
+ * Model Certification
+ * 
+ */
+export type Certification = Prisma.CertificationModel
+/**
+ * Model Faq
+ * 
+ */
+export type Faq = Prisma.FaqModel
+/**
+ * Model AuditLog
+ * 
+ */
+export type AuditLog = Prisma.AuditLogModel
