@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more SystemChecks
- * const systemChecks = await prisma.systemCheck.findMany()
+ * // Fetch zero or more Profiles
+ * const profiles = await prisma.profile.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -42,7 +42,67 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
+ * Model Profile
+ * 
+ */
+export type Profile = Prisma.ProfileModel
+/**
+ * Model Address
+ * 
+ */
+export type Address = Prisma.AddressModel
+/**
+ * Model Category
+ * 
+ */
+export type Category = Prisma.CategoryModel
+/**
+ * Model Service
+ * 
+ */
+export type Service = Prisma.ServiceModel
+/**
+ * Model Location
+ * 
+ */
+export type Location = Prisma.LocationModel
+/**
+ * Model ServiceLocation
+ * 
+ */
+export type ServiceLocation = Prisma.ServiceLocationModel
+/**
  * Model SystemCheck
  * 
  */
 export type SystemCheck = Prisma.SystemCheckModel
+/**
+ * Model AvailabilitySlot
+ * 
+ */
+export type AvailabilitySlot = Prisma.AvailabilitySlotModel
+/**
+ * Model Booking
+ * 
+ */
+export type Booking = Prisma.BookingModel
+/**
+ * Model BookingStatusHistory
+ * 
+ */
+export type BookingStatusHistory = Prisma.BookingStatusHistoryModel
+/**
+ * Model Enquiry
+ * 
+ */
+export type Enquiry = Prisma.EnquiryModel
+/**
+ * Model Quotation
+ * 
+ */
+export type Quotation = Prisma.QuotationModel
+/**
+ * Model QuotationItem
+ * 
+ */
+export type QuotationItem = Prisma.QuotationItemModel

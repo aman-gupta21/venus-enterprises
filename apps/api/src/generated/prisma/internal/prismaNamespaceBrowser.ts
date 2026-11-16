@@ -51,7 +51,19 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  SystemCheck: 'SystemCheck'
+  Profile: 'Profile',
+  Address: 'Address',
+  Category: 'Category',
+  Service: 'Service',
+  Location: 'Location',
+  ServiceLocation: 'ServiceLocation',
+  SystemCheck: 'SystemCheck',
+  AvailabilitySlot: 'AvailabilitySlot',
+  Booking: 'Booking',
+  BookingStatusHistory: 'BookingStatusHistory',
+  Enquiry: 'Enquiry',
+  Quotation: 'Quotation',
+  QuotationItem: 'QuotationItem'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -70,6 +82,99 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const ProfileScalarFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  phone: 'phone',
+  role: 'role',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]
+
+
+export const AddressScalarFieldEnum = {
+  id: 'id',
+  profileId: 'profileId',
+  label: 'label',
+  line1: 'line1',
+  line2: 'line2',
+  landmark: 'landmark',
+  city: 'city',
+  state: 'state',
+  postalCode: 'postalCode',
+  country: 'country',
+  isDefault: 'isDefault',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AddressScalarFieldEnum = (typeof AddressScalarFieldEnum)[keyof typeof AddressScalarFieldEnum]
+
+
+export const CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  parentId: 'parentId',
+  isActive: 'isActive',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
+
+
+export const ServiceScalarFieldEnum = {
+  id: 'id',
+  categoryId: 'categoryId',
+  name: 'name',
+  slug: 'slug',
+  shortDescription: 'shortDescription',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  bookingType: 'bookingType',
+  basePrice: 'basePrice',
+  currency: 'currency',
+  durationMinutes: 'durationMinutes',
+  isActive: 'isActive',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
+
+
+export const LocationScalarFieldEnum = {
+  id: 'id',
+  city: 'city',
+  state: 'state',
+  country: 'country',
+  slug: 'slug',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type LocationScalarFieldEnum = (typeof LocationScalarFieldEnum)[keyof typeof LocationScalarFieldEnum]
+
+
+export const ServiceLocationScalarFieldEnum = {
+  serviceId: 'serviceId',
+  locationId: 'locationId',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
+} as const
+
+export type ServiceLocationScalarFieldEnum = (typeof ServiceLocationScalarFieldEnum)[keyof typeof ServiceLocationScalarFieldEnum]
+
+
 export const SystemCheckScalarFieldEnum = {
   id: 'id',
   message: 'message',
@@ -77,6 +182,110 @@ export const SystemCheckScalarFieldEnum = {
 } as const
 
 export type SystemCheckScalarFieldEnum = (typeof SystemCheckScalarFieldEnum)[keyof typeof SystemCheckScalarFieldEnum]
+
+
+export const AvailabilitySlotScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  locationId: 'locationId',
+  startsAt: 'startsAt',
+  endsAt: 'endsAt',
+  capacity: 'capacity',
+  bookedCount: 'bookedCount',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AvailabilitySlotScalarFieldEnum = (typeof AvailabilitySlotScalarFieldEnum)[keyof typeof AvailabilitySlotScalarFieldEnum]
+
+
+export const BookingScalarFieldEnum = {
+  id: 'id',
+  bookingNumber: 'bookingNumber',
+  customerId: 'customerId',
+  serviceId: 'serviceId',
+  locationId: 'locationId',
+  addressId: 'addressId',
+  slotId: 'slotId',
+  status: 'status',
+  customerNotes: 'customerNotes',
+  amount: 'amount',
+  currency: 'currency',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookingScalarFieldEnum = (typeof BookingScalarFieldEnum)[keyof typeof BookingScalarFieldEnum]
+
+
+export const BookingStatusHistoryScalarFieldEnum = {
+  id: 'id',
+  bookingId: 'bookingId',
+  fromStatus: 'fromStatus',
+  toStatus: 'toStatus',
+  changedByProfileId: 'changedByProfileId',
+  note: 'note',
+  createdAt: 'createdAt'
+} as const
+
+export type BookingStatusHistoryScalarFieldEnum = (typeof BookingStatusHistoryScalarFieldEnum)[keyof typeof BookingStatusHistoryScalarFieldEnum]
+
+
+export const EnquiryScalarFieldEnum = {
+  id: 'id',
+  enquiryNumber: 'enquiryNumber',
+  customerId: 'customerId',
+  serviceId: 'serviceId',
+  locationId: 'locationId',
+  type: 'type',
+  status: 'status',
+  contactName: 'contactName',
+  contactEmail: 'contactEmail',
+  contactPhone: 'contactPhone',
+  companyName: 'companyName',
+  projectTitle: 'projectTitle',
+  description: 'description',
+  estimatedBudget: 'estimatedBudget',
+  preferredDate: 'preferredDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EnquiryScalarFieldEnum = (typeof EnquiryScalarFieldEnum)[keyof typeof EnquiryScalarFieldEnum]
+
+
+export const QuotationScalarFieldEnum = {
+  id: 'id',
+  quotationNumber: 'quotationNumber',
+  enquiryId: 'enquiryId',
+  version: 'version',
+  status: 'status',
+  subtotal: 'subtotal',
+  taxAmount: 'taxAmount',
+  totalAmount: 'totalAmount',
+  currency: 'currency',
+  validUntil: 'validUntil',
+  terms: 'terms',
+  acceptedAt: 'acceptedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type QuotationScalarFieldEnum = (typeof QuotationScalarFieldEnum)[keyof typeof QuotationScalarFieldEnum]
+
+
+export const QuotationItemScalarFieldEnum = {
+  id: 'id',
+  quotationId: 'quotationId',
+  description: 'description',
+  quantity: 'quantity',
+  unitPrice: 'unitPrice',
+  lineTotal: 'lineTotal',
+  sortOrder: 'sortOrder'
+} as const
+
+export type QuotationItemScalarFieldEnum = (typeof QuotationItemScalarFieldEnum)[keyof typeof QuotationItemScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -93,4 +302,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

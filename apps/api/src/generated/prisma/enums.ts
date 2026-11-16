@@ -9,7 +9,63 @@
 * 🟢 You can import this file directly.
 */
 
+export const UserRole = {
+  CUSTOMER: 'CUSTOMER',
+  ADMIN: 'ADMIN',
+  STAFF: 'STAFF'
+} as const
+
+export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const BookingType = {
+  BOOK_VISIT: 'BOOK_VISIT',
+  REQUEST_QUOTE: 'REQUEST_QUOTE',
+  ENQUIRY: 'ENQUIRY'
+} as const
+
+export type BookingType = (typeof BookingType)[keyof typeof BookingType]
+
+
+export const BookingStatus = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type BookingStatus = (typeof BookingStatus)[keyof typeof BookingStatus]
+
+
+export const EnquiryType = {
+  REQUEST_QUOTE: 'REQUEST_QUOTE',
+  GENERAL_ENQUIRY: 'GENERAL_ENQUIRY'
+} as const
+
+export type EnquiryType = (typeof EnquiryType)[keyof typeof EnquiryType]
+
+
+export const EnquiryStatus = {
+  NEW: 'NEW',
+  UNDER_REVIEW: 'UNDER_REVIEW',
+  CONTACTED: 'CONTACTED',
+  QUOTATION_SENT: 'QUOTATION_SENT',
+  ACCEPTED: 'ACCEPTED',
+  CLOSED: 'CLOSED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type EnquiryStatus = (typeof EnquiryStatus)[keyof typeof EnquiryStatus]
+
+
+export const QuotationStatus = {
+  DRAFT: 'DRAFT',
+  SENT: 'SENT',
+  ACCEPTED: 'ACCEPTED',
+  REJECTED: 'REJECTED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type QuotationStatus = (typeof QuotationStatus)[keyof typeof QuotationStatus]
